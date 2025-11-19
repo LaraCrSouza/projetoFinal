@@ -33,6 +33,8 @@ public class TelaLogin extends JFrame {
 	private String senha = "123";
 	private Usuario usuario;
 
+	TelaCompras telaCompras = new TelaCompras();
+	TelaCadastro telaCadastro = new TelaCadastro();
 	/**
 	 * Launch the application.
 	 */
@@ -58,6 +60,7 @@ public class TelaLogin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 457, 331);
 		
+		
 		setResizable(false); //Ele faz com ue travemos a tela e nao de pra redimensiona-la
 		
 		setLocationRelativeTo(null); //Abre a tela centralizada
@@ -74,56 +77,60 @@ public class TelaLogin extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lbLogin = new JLabel("LOGIN");
-		lbLogin.setForeground(new Color(17, 80, 174));
+		lbLogin.setForeground(new Color(0, 64, 128));
 		lbLogin.setFont(new Font("Noto Sans Lao", Font.BOLD, 14));
 		lbLogin.setBounds(194, 38, 66, 19);
 		contentPane.add(lbLogin);
 		
 		JButton btEntrar = new JButton("Entrar");
 		btEntrar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				usuario = new Usuario(tfUsuario.getText(), pfSenha.getText());
 				
-				if (usuario.getUsuario().equals(user) && usuario.getSenha().equals(senha)) {
+				if (usuario.getUsuario().equals(user) && usuario.getSenha().equals(senha) || usuario.getUsuario().equals(tfUsuario) && usuario.getSenha().equals(pfSenha)); {
 					JOptionPane.showMessageDialog(null, "Acesso OK\n" + usuario.getMsg());
-				} else {
-					JOptionPane.showMessageDialog(null, "Acesso negado");
-				}
+					
+//					telaCompras.setVisible(true);
+//					dispose();
+					} 
+//				else {
+//					JOptionPane.showMessageDialog(null, "Acesso negado");
+//				} 
 			}
-				
-			});
-		btEntrar.setBackground(new Color(149, 201, 253));
+		});
+		btEntrar.setBackground(new Color(152, 226, 254));
 		btEntrar.setBounds(187, 182, 89, 23);
 		contentPane.add(btEntrar);
 		
 		JLabel lbUsuario = new JLabel("Usuario");
 		lbUsuario.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbUsuario.setForeground(new Color(17, 80, 174));
+		lbUsuario.setForeground(new Color(0, 64, 128));
 		lbUsuario.setBounds(71, 86, 46, 14);
 		contentPane.add(lbUsuario);
 		
 		JLabel lbSenha = new JLabel("Senha");
 		lbSenha.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbSenha.setForeground(new Color(17, 80, 174));
+		lbSenha.setForeground(new Color(0, 64, 128));
 		lbSenha.setBounds(71, 135, 46, 14);
 		contentPane.add(lbSenha);
 		
 		tfUsuario = new JTextField();
 		tfUsuario.setForeground(new Color(0, 0, 0));
-		tfUsuario.setBackground(new Color(149, 201, 253));
+		tfUsuario.setBackground(new Color(152, 226, 254));
 		tfUsuario.setBounds(127, 83, 230, 20);
 		contentPane.add(tfUsuario);
 		tfUsuario.setColumns(10);
 		
 		pfSenha = new JPasswordField();
-		pfSenha.setBackground(new Color(149, 201, 253));
+		pfSenha.setBackground(new Color(152, 226, 254));
 		pfSenha.setBounds(127, 132, 230, 20);
 		contentPane.add(pfSenha);
 		pfSenha.setColumns(10);
 		
 		JLabel lbSemConta = new JLabel("Ainda não tem uma conta?");
-		lbSemConta.setForeground(new Color(17, 80, 174));
+		lbSemConta.setForeground(new Color(0, 64, 128));
 		lbSemConta.setBackground(new Color(0, 124, 191));
 		lbSemConta.setBounds(89, 252, 151, 14);
 		contentPane.add(lbSemConta);
@@ -131,9 +138,12 @@ public class TelaLogin extends JFrame {
 		JButton btCadastrase = new JButton("Cadastra-se");
 		btCadastrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				telaCadastro.setVisible(true);
+				dispose();
 			}
 		});
-		btCadastrase.setBackground(new Color(149, 201, 253));
+		btCadastrase.setBackground(new Color(152, 226, 254));
 		btCadastrase.setBounds(250, 248, 117, 23);
 		contentPane.add(btCadastrase);
 
