@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class TelaCadastro extends JFrame {
 
@@ -46,6 +48,7 @@ public class TelaCadastro extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastro() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\roger\\OneDrive\\Área de Trabalho\\Logotipo200.png"));
 		setTitle("Tela de cadastro");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 529, 412);
@@ -59,6 +62,8 @@ public class TelaCadastro extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenuItem miInicio = new JMenuItem("Inicio");
+		miInicio.setIcon(new ImageIcon("C:\\Users\\roger\\OneDrive\\Área de Trabalho\\casa.png"));
+		miInicio.setForeground(new Color(0, 64, 128));
 		miInicio.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		miInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -74,8 +79,8 @@ public class TelaCadastro extends JFrame {
 		contentPane.setLayout(null);
 		
 		tfEmail = new JTextField();
-		tfEmail.setBackground(new Color(152, 226, 254));
-		tfEmail.setBounds(139, 89, 305, 30);
+		tfEmail.setBackground(new Color(196, 255, 255));
+		tfEmail.setBounds(139, 96, 305, 23);
 		contentPane.add(tfEmail);
 		tfEmail.setColumns(10);
 		
@@ -87,15 +92,15 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lbEmail);
 		
 		tfUsuarioC = new JTextField();
-		tfUsuarioC.setBackground(new Color(152, 226, 254));
+		tfUsuarioC.setBackground(new Color(196, 255, 255));
 		tfUsuarioC.setColumns(10);
-		tfUsuarioC.setBounds(139, 153, 305, 30);
+		tfUsuarioC.setBounds(139, 160, 305, 23);
 		contentPane.add(tfUsuarioC);
 		
 		tfSenhaC = new JTextField();
-		tfSenhaC.setBackground(new Color(152, 226, 254));
+		tfSenhaC.setBackground(new Color(196, 255, 255));
 		tfSenhaC.setColumns(10);
-		tfSenhaC.setBounds(139, 218, 305, 30);
+		tfSenhaC.setBounds(139, 225, 305, 23);
 		contentPane.add(tfSenhaC);
 		
 		JLabel lbUsuario = new JLabel("Usuário");
@@ -112,12 +117,14 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lbSenha);
 		
 		JLabel lblNewLabel = new JLabel("Cantinho Doce");
-		lblNewLabel.setForeground(new Color(37, 58, 250));
+		lblNewLabel.setBackground(new Color(255, 255, 255));
+		lblNewLabel.setForeground(new Color(0, 64, 128));
 		lblNewLabel.setFont(new Font("Bahnschrift", Font.BOLD | Font.ITALIC, 17));
-		lblNewLabel.setBounds(22, 10, 144, 25);
+		lblNewLabel.setBounds(10, 10, 144, 25);
 		contentPane.add(lblNewLabel);
 		
 		JButton btCadastrar = new JButton("Cadastrar");
+		btCadastrar.setBackground(new Color(196, 255, 255));
 		btCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,6 +145,7 @@ public class TelaCadastro extends JFrame {
 					JOptionPane.showMessageDialog(null, "Sua senha precisa ter mais de 4 caracteres" , "Tela de erro", JOptionPane.ERROR_MESSAGE);
 					tfUsuarioC.setText("");
 					tfSenhaC.setText("");
+					tfEmail.setText("");
 					tfUsuarioC.requestFocus();
 				}
 				

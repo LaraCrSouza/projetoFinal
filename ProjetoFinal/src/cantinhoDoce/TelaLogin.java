@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import javax.swing.JProgressBar;
+import javax.swing.ImageIcon;
 
 public class TelaLogin extends JFrame {
 
@@ -60,7 +61,7 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\aluno\\Downloads\\Logotipo (1).png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\roger\\OneDrive\\Área de Trabalho\\Logotipo200.png"));
 		setTitle("Tela de Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 529, 412);
@@ -76,6 +77,7 @@ public class TelaLogin extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Cantinho Doce");
+		lblNewLabel.setBackground(new Color(0, 64, 128));
 		lblNewLabel.setForeground(new Color(37, 58, 250));
 		lblNewLabel.setFont(new Font("Bahnschrift", Font.BOLD | Font.ITALIC, 17));
 		lblNewLabel.setBounds(10, 10, 129, 25);
@@ -116,7 +118,7 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		
-		btEntrar.setBackground(new Color(152, 226, 254));
+		btEntrar.setBackground(new Color(196, 255, 255));
 		btEntrar.setBounds(223, 265, 91, 25);
 		contentPane.add(btEntrar);
 		
@@ -134,13 +136,13 @@ public class TelaLogin extends JFrame {
 		
 		tfUsuario = new JTextField();
 		tfUsuario.setForeground(new Color(0, 0, 0));
-		tfUsuario.setBackground(new Color(152, 226, 254));
+		tfUsuario.setBackground(new Color(196, 255, 255));
 		tfUsuario.setBounds(149, 142, 301, 25);
 		contentPane.add(tfUsuario);
 		tfUsuario.setColumns(10);
 		
 		pfSenha = new JPasswordField();
-		pfSenha.setBackground(new Color(152, 226, 254));
+		pfSenha.setBackground(new Color(196, 255, 255));
 		pfSenha.setBounds(149, 202, 301, 25);
 		contentPane.add(pfSenha);
 		pfSenha.setColumns(10);
@@ -161,7 +163,7 @@ public class TelaLogin extends JFrame {
 				cadastro.setVisible(true);
 			}
 		});
-		btCadastrase.setBackground(new Color(152, 226, 254));
+		btCadastrase.setBackground(new Color(196, 255, 255));
 		btCadastrase.setBounds(329, 326, 121, 31);
 		contentPane.add(btCadastrase);
 
